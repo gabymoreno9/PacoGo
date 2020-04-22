@@ -13,7 +13,7 @@ import './App.css'
 
 class App extends React.Component {
   state = {
-    treeData: [{ title: 'Mama Rabbit' }, { title: 'Papa Rabbit' }]
+    treeData: [{ title: 'Direction' }, { title: 'Action' }]
   }
 
   render = () =>
@@ -21,7 +21,9 @@ class App extends React.Component {
       <Navbar />
   
       <DndProvider backend={HTML5Backend}>
-        <ExternalNode node={{ title: 'Baby Rabbit' }} />← drag
+        <ExternalNode node={{ title: 'Move Forward' }} />← drag<br />
+        <ExternalNode node={{ title: 'Bark' }} />← drag
+
 
         <div style={{ height: 400 }}>
           <SortableTree
