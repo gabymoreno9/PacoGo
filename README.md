@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Planning Docs
+[Trello Board](https://trello.com/b/Tl544AkH/pacogo)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
