@@ -1,3 +1,4 @@
+import range from 'lodash/range'
 import React from 'react'
 import HTML5Backend from 'react-dnd-html5-backend'
 import FullNodeTheme from 'react-sortable-tree-theme-minimal'
@@ -26,18 +27,26 @@ class App extends React.Component {
             <ExternalNode node={{ title: 'Move Forward' }} />← drag<br />
             <ExternalNode node={{ title: 'Bark' }} />← drag
 
-
             <div style={{ height: '100%' }}>
               <SortableTree
-                theme={FullNodeTheme}
                 dndType="externalNode"
+                theme={FullNodeTheme}
+                scaffoldBlockPxWidth={20}
                 treeData={this.state.treeData}
+                canNodeHaveChildren={() => false}
                 onChange={treeData => this.setState({ treeData })} />
             </div>
           </DndProvider>
         </div>
 
-        <div className="content" style={{backgroundColor: 'blue', flexGrow: 1 }}>Paco go here</div>
+        <div className="content" style={{ flexGrow: 1 }}>
+          <div className="grid">
+            {range(4).map(i =>
+              <div className="row">
+                {range(4).map(j => <div className="column"></div>)}
+              </div>)}
+          </div>
+        </div>
       </div>
     </div>
 }
