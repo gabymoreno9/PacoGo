@@ -4,6 +4,11 @@ import HTML5Backend from 'react-dnd-html5-backend'
 import FullNodeTheme from 'react-sortable-tree-theme-minimal'
 import { DndProvider } from 'react-dnd'
 import { SortableTreeWithoutDndContext as SortableTree } from 'react-sortable-tree'
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+
+
 
 import Navbar from "./components/Navbar"
 import ExternalNode from "./components/ExternalNode"
@@ -16,9 +21,36 @@ import 'react-sortable-tree/style.css'
 import './App.css'
 
 
+function getDirectionForNode (node) {
+  if (node.title === "Up") { return { x: 0, y: -100 }}
+  else if (node.title === "Down") { return { x: 0, y: 100 }}
+  else if (node.title === "Left") { return { x: -100, y: 0 }}
+  else if (node.title === "Right") { return { x: 100, y: 0 }}
+}
+
+
 class App extends React.Component {
   state = {
+    pacoMoving: false,
+    pacoTop: 320,
+    pacoLeft: 10,
     treeData: []
+  }
+
+  makePacoMove = movements => {
+    if (movements.length === 0) {
+      this.setState ({ pacoMoving: false })
+    }
+    else {
+      let movement = getDirectionForNode(movements[0])
+      this.setState({
+        pacoMoving: true,
+        pacoTop: this.state.pacoTop + movement.y,
+        pacoLeft: this.state.pacoLeft + movement.x
+      })
+      
+      setTimeout(() => this.makePacoMove(movements.slice(1)), 1000)
+    }
   }
 
   render = () =>
@@ -45,17 +77,28 @@ class App extends React.Component {
             </div>
           </DndProvider>
         </div>
-
         <div className="content" style={{ flexGrow: 1 }}>
-          <div className="grid" style={{ position: 'relative' }}>
-            <img src={Paco} className="paco" style={{ position: 'absolute', width: 70, top: 320, left: 10 }} />
-            <img src={Pizza} style={{ position: 'absolute', width: 70, top: 320, left: 220 }} />
-            <img src={Home} style={{ position: 'absolute', width: 70, top: 15, left: 220 }} />
+          <div>
+            <Button
+              variant="contained"
+              color="primary"
+              endIcon={<PlayArrowIcon />}
+              onClick={() => this.makePacoMove(this.state.treeData)}>
+              Make Paco GO!
+            </Button>
 
-            {range(4).map(i =>
-              <div className="row">
-                {range(4).map(j => <div className="column"></div>)}
-              </div>)}
+            <div className="grid" style={{ position: 'relative' }}>
+              <img src={Pizza} style={{ position: 'absolute', width: 70, top: 320, left: 220 }} />
+              <img src={Home} style={{ position: 'absolute', width: 70, top: 15, left: 220 }} />
+              <img src={Paco}
+                   className={this.state.pacoMoving ? "paco paco-move" : "paco"}
+                   style={{ position: 'absolute', width: 70, left: this.state.pacoLeft, top: this.state.pacoTop }} />
+
+              {range(4).map(i =>
+                <div className="row" key={i}>
+                  {range(4).map(j => <div className="column" key={j}></div>)}
+                </div>)}
+            </div>
           </div>
         </div>
       </div>
