@@ -7,6 +7,10 @@ import { SortableTreeWithoutDndContext as SortableTree } from 'react-sortable-tr
 
 import Navbar from "./components/Navbar"
 import ExternalNode from "./components/ExternalNode"
+import Paco from './shiba.svg'
+import Pizza from './pizza.svg'
+import Home from './home-run.svg'
+
 
 import 'react-sortable-tree/style.css'
 import './App.css'
@@ -14,7 +18,7 @@ import './App.css'
 
 class App extends React.Component {
   state = {
-    treeData: [{ title: 'Direction' }, { title: 'Action' }]
+    treeData: []
   }
 
   render = () =>
@@ -24,9 +28,12 @@ class App extends React.Component {
       <div style={{ display: "flex", flexGrow: 1 }}>
         <div className="sidebar" style={{ width: 300 }}>
           <DndProvider backend={HTML5Backend}>
-            <ExternalNode node={{ title: 'Move Forward' }} />← drag<br />
-            <ExternalNode node={{ title: 'Bark' }} />← drag
-
+            <div className="draggables">
+              <ExternalNode node={{ title: 'Up', color: 'green' }} />
+              <ExternalNode node={{ title: 'Down', color: 'orange' }} />
+              <ExternalNode node={{ title: 'Left', color: 'red' }} />
+              <ExternalNode node={{ title: 'Right', color: 'blue' }} />
+            </div>
             <div style={{ height: '100%' }}>
               <SortableTree
                 dndType="externalNode"
@@ -40,7 +47,11 @@ class App extends React.Component {
         </div>
 
         <div className="content" style={{ flexGrow: 1 }}>
-          <div className="grid">
+          <div className="grid" style={{ position: 'relative' }}>
+            <img src={Paco} className="paco" style={{ position: 'absolute', width: 70, top: 320, left: 10 }} />
+            <img src={Pizza} style={{ position: 'absolute', width: 70, top: 320, left: 220 }} />
+            <img src={Home} style={{ position: 'absolute', width: 70, top: 15, left: 220 }} />
+
             {range(4).map(i =>
               <div className="row">
                 {range(4).map(j => <div className="column"></div>)}

@@ -8,6 +8,14 @@
   min-width: 100%;
 }
 
+.rst__placeholder::before {
+  content: 'Drag actions here!';
+  z-index: 1;
+  margin: 0 15px;
+  line-height: 50px;
+  text-align: center;
+}
+
 .sidebar {
   background-color: #F9F9F9;
 }
@@ -24,4 +32,23 @@
   width: 100px;
   height: 100px;
   border: 1px solid #999;
+}
+
+.draggables {
+  padding: 20px 20px;
+}
+.draggables div {
+  cursor: move;
+}
+
+.paco-wiggle {
+  animation: wiggle 1s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes wiggle {
+  0% { transform: rotateZ(0deg); }
+  25% { transform: rotateZ(20deg); }
+  75% { transform: rotateZ(-20deg); }
+  100% { transform: rotateZ(0deg); }
 }

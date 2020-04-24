@@ -15,14 +15,13 @@ class externalNodeBaseComponent extends React.Component {
     const { connectDragSource, node } = this.props;
 
     return connectDragSource(
-      <div
-        style={{
+      <div style={{
           display: 'inline-block',
           padding: '3px 5px',
-          background: 'blue',
+          backgroundColor: node.color,
           color: 'white',
-        }}
-      >
+          marginRight: 10
+        }}>
         {node.title}
       </div>,
       { dropEffect: 'copy' }
@@ -31,7 +30,7 @@ class externalNodeBaseComponent extends React.Component {
 }
 
 externalNodeBaseComponent.propTypes = {
-  node: PropTypes.shape({ title: PropTypes.string }).isRequired,
+  node: PropTypes.shape({ title: PropTypes.string, color: PropTypes.string }).isRequired,
   connectDragSource: PropTypes.func.isRequired,
 };
 
