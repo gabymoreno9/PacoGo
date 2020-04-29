@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## PacoGo
+
+PacoGo is a kids coding game that uses an interactive and fun interface. 
+
 
 ## Planning Docs
 [Trello Board](https://trello.com/b/Tl544AkH/pacogo)
