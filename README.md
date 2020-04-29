@@ -1,5 +1,5 @@
 
-## PacoGo
+# PacoGo
 
 PacoGo is a kids coding game that uses an interactive and fun interface. 
 
