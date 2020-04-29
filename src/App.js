@@ -7,6 +7,7 @@ import { SortableTreeWithoutDndContext as SortableTree } from 'react-sortable-tr
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import AutorenewIcon from '@material-ui/icons/Autorenew';
 
 
 
@@ -101,7 +102,7 @@ class App extends React.Component {
               <Button
                 variant="contained"
                 color="primary"
-                endIcon={<PlayArrowIcon />}
+                endIcon={<AutorenewIcon />}
                 onClick={() => this.setState({ pacoY: 320, pacoX: 10 })}>
                 Reset Paco
               </Button>
