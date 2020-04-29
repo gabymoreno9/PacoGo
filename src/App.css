@@ -59,6 +59,5 @@
 }
 
 .MuiButton-containedPrimary{
-  margin-bottom: 10px !important;
-  left: 120px;
+  margin: 20px 5px !important;
 }

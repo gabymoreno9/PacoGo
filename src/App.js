@@ -89,13 +89,23 @@ class App extends React.Component {
         </div>
         <div className="content" style={{ flexGrow: 1 }}>
           <div>
-            <Button
-              variant="contained"
-              color="primary"
-              endIcon={<PlayArrowIcon />}
-              onClick={() => this.makePacoMove(this.state.treeData)}>
-              Make Paco GO!
-            </Button>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <Button
+                variant="contained"
+                color="primary"
+                endIcon={<PlayArrowIcon />}
+                onClick={() => this.makePacoMove(this.state.treeData)}>
+                Make Paco GO!
+              </Button>
+
+              <Button
+                variant="contained"
+                color="primary"
+                endIcon={<PlayArrowIcon />}
+                onClick={() => this.setState({ pacoY: 320, pacoX: 10 })}>
+                Reset Paco
+              </Button>
+            </div>
 
             <div className="grid" style={{ position: 'relative' }}>
               <img src={Pizza} style={{ position: 'absolute', width: 70, top: 320, left: 220 }} />
