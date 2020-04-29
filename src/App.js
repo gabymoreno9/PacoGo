@@ -32,8 +32,8 @@ function getDirectionForNode (node) {
 class App extends React.Component {
   state = {
     pacoMoving: false,
-    pacoTop: 320,
-    pacoLeft: 10,
+    pacoY: 320,
+    pacoX: 10,
     treeData: []
   }
 
@@ -43,10 +43,20 @@ class App extends React.Component {
     }
     else {
       let movement = getDirectionForNode(movements[0])
+      let newPosition = {
+        x: this.state.pacoX + movement.x,
+        y: this.state.pacoY + movement.y
+      }
+
+      if (newPosition.x < 0 || newPosition.x > 400 || 
+          newPosition.y < 0 || newPosition.y > 400) {
+          newPosition = { x: this.state.pacoX, y: this.state.pacoY }
+      }
+
       this.setState({
         pacoMoving: true,
-        pacoTop: this.state.pacoTop + movement.y,
-        pacoLeft: this.state.pacoLeft + movement.x
+        pacoX: newPosition.x,
+        pacoY: newPosition.y
       })
       
       setTimeout(() => this.makePacoMove(movements.slice(1)), 1000)
@@ -92,7 +102,7 @@ class App extends React.Component {
               <img src={Home} style={{ position: 'absolute', width: 70, top: 15, left: 220 }} />
               <img src={Paco}
                    className={this.state.pacoMoving ? "paco paco-move" : "paco"}
-                   style={{ position: 'absolute', width: 70, left: this.state.pacoLeft, top: this.state.pacoTop }} />
+                   style={{ position: 'absolute', width: 70, left: this.state.pacoX, top: this.state.pacoY }} />
 
               {range(4).map(i =>
                 <div className="row" key={i}>
