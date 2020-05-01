@@ -20,7 +20,8 @@ class externalNodeBaseComponent extends React.Component {
           padding: '3px 5px',
           backgroundColor: node.color,
           color: 'white',
-          marginRight: 10
+          marginRight: 10,
+          cursor: 'move',
         }}>
         {node.title}
       </div>,

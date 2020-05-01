@@ -38,7 +38,7 @@
   padding: 20px 20px;
 }
 .draggables div {
-  cursor: move;
+  /* cursor: move; */
 }
 
 .paco {

@@ -13,6 +13,7 @@ import AutorenewIcon from '@material-ui/icons/Autorenew';
 
 import Navbar from "./components/Navbar"
 import ExternalNode from "./components/ExternalNode"
+import TrashNode from "./components/TrashNode"
 import Paco from './shiba.svg'
 import Pizza from './pizza.svg'
 import Home from './home-run.svg'
@@ -76,6 +77,7 @@ class App extends React.Component {
               <ExternalNode node={{ title: 'Down', color: 'orange' }} />
               <ExternalNode node={{ title: 'Left', color: 'red' }} />
               <ExternalNode node={{ title: 'Right', color: 'blue' }} />
+              <TrashNode/>
             </div>
             <div style={{ height: '100%' }}>
               <SortableTree
