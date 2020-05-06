@@ -37,8 +37,10 @@
 .draggables {
   padding: 20px 20px;
 }
-.draggables div {
-  /* cursor: move; */
+.draggables span {
+  vertical-align: top;
+  line-height: 25px;
+  margin-right: 3px;
 }
 
 .paco {

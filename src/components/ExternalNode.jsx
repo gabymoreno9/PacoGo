@@ -19,13 +19,14 @@ class externalNodeBaseComponent extends React.Component {
     return connectDragSource(
       <div style={{
           display: 'inline-block',
-          padding: '3px 5px',
+          padding: '3px 5px 0 5px',
           backgroundColor: node.color,
           color: 'white',
           marginRight: 10,
+          marginBottom: 5,
           cursor: 'move',
         }}>
-        {node.title}
+        <span>{node.title}</span>
         {React.createElement(node.icon)}
       </div>,
       { dropEffect: 'copy' }

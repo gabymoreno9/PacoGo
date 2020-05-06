@@ -24,7 +24,7 @@ class externalNodeBaseComponent extends React.Component {
           padding: '3px 5px',
           color: 'black',
           marginRight: 10,
-          verticalAlign: 'middle',
+          verticalAlign: 'top',
         }}>
         <DeleteForeverIcon />
       </div>
