@@ -10,9 +10,11 @@ const externalNodeCollect = (connect) => ({
   connectDragSource: connect.dragSource()
 });
 
+
 class externalNodeBaseComponent extends React.Component {
   render() {
     const { connectDragSource, node } = this.props;
+    // const icon = this.props.node.icon;
 
     return connectDragSource(
       <div style={{
@@ -24,6 +26,7 @@ class externalNodeBaseComponent extends React.Component {
           cursor: 'move',
         }}>
         {node.title}
+        {node.icon}
       </div>,
       { dropEffect: 'copy' }
     )
