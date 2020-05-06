@@ -26,7 +26,7 @@ class externalNodeBaseComponent extends React.Component {
           cursor: 'move',
         }}>
         {node.title}
-        {node.icon}
+        {React.createElement(node.icon)}
       </div>,
       { dropEffect: 'copy' }
     )
@@ -34,7 +34,7 @@ class externalNodeBaseComponent extends React.Component {
 }
 
 externalNodeBaseComponent.propTypes = {
-  node: PropTypes.shape({ title: PropTypes.string, color: PropTypes.string }).isRequired,
+  node: PropTypes.shape({ title: PropTypes.string, color: PropTypes.string, icon: PropTypes.object }).isRequired,
   connectDragSource: PropTypes.func.isRequired,
 };
 

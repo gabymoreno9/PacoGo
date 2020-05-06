@@ -8,8 +8,10 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import AutorenewIcon from '@material-ui/icons/Autorenew';
-import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
-
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 import Navbar from "./components/Navbar"
 import ExternalNode from "./components/ExternalNode"
@@ -73,10 +75,10 @@ class App extends React.Component {
         <div className="sidebar" style={{ width: 300 }}>
           <DndProvider backend={HTML5Backend}>
             <div className="draggables">
-              <ExternalNode node={{ title: 'Up', color: 'green' }} />
-              <ExternalNode node={{ title: 'Down', color: 'orange' }} />
-              <ExternalNode node={{ title: 'Left', color: 'red' }} />
-              <ExternalNode node={{ title: 'Right', color: 'blue' }} />
+              <ExternalNode node={{ title: 'Up', color: 'green', icon: ArrowUpwardIcon }} />
+              <ExternalNode node={{ title: 'Down', color: 'orange', icon: ArrowDownwardIcon }} />
+              <ExternalNode node={{ title: 'Left', color: 'red', icon: ArrowBackIcon }} />
+              <ExternalNode node={{ title: 'Right', color: 'blue', icon: ArrowForwardIcon }} />
               <TrashNode/>
             </div>
             <div style={{ height: '100%' }}>
