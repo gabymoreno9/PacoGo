@@ -17,9 +17,9 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import Navbar from "./components/Navbar"
 import ExternalNode from "./components/ExternalNode"
 import TrashNode from "./components/TrashNode"
-import Paco from './shiba.svg'
-import Pizza from './pizza.svg'
-import Home from './home-run.svg'
+import Paco from './assets/shiba.svg'
+import Pizza from './assets/pizza.svg'
+import Home from './assets/home-run.svg'
 
 
 import 'react-sortable-tree/style.css'
