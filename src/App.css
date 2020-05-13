@@ -70,3 +70,7 @@
   height: 100%;
   z-index: 1;
 }
+
+.MuiButton-containedPrimary{
+  background-color: #F78764 !important;
+}
