@@ -103,7 +103,7 @@ class Game extends React.Component {
         </DndProvider>
       </div>
 
-      <div className="content" style={{ flexGrow: 1 }}>
+      <div className="content" style={{ flexGrow: 1, backgroundColor: '#E4EFEF' }}>
         <div>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <Button
