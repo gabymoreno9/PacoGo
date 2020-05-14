@@ -76,11 +76,17 @@
 }
 .MuiAppBar-colorPrimary{
   background-color: #fff !important;
-
-}  
+}
 .logo{
   width: 150px;
 }
 .MuiPaper-elevation4{
   box-shadow: none !important;
+}
+.landing-page {
+  display: flex;
+  flex-grow: 1;
+  background-color: #91A6FF;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from './Navbar';
+
+import paco from '../assets/paco.png'
 
 
 class LandingPage extends React.Component {
   render = () =>
-    <div className="App" style={{ height: "100vw", display: 'flex', flexDirection: 'column', backgroundColor: '#91A6FF' }}>
-        <Navbar />
-    
+    <div className="landing-page">
+      <img src={paco} style={{ width: '280px', height: '300px' }} alt="logo" />
     </div>
 }
 

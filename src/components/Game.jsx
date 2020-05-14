@@ -81,65 +81,61 @@ class Game extends React.Component {
   }
 
   render = () =>
-    <div className="App" style={{ height: "100vw", display: 'flex', flexDirection: 'column' }}>
-      <Navbar />
-  
-      <div style={{ display: "flex", flexGrow: 1 }}>
-        <div className="sidebar" style={{ width: 300 }}>
-          <DndProvider backend={HTML5Backend}>
-            <div className="draggables">
-              <ExternalNode node={{ title: 'Up', color: 'green', icon: ArrowUpwardIcon }} />
-              <ExternalNode node={{ title: 'Down', color: 'orange', icon: ArrowDownwardIcon }} />
-              <ExternalNode node={{ title: 'Left', color: 'purple', icon: ArrowBackIcon }} />
-              <ExternalNode node={{ title: 'Right', color: 'blue', icon: ArrowForwardIcon }} />
-              <TrashNode/>
-            </div>
-            <div style={{ height: '100%' }}>
-              <SortableTree
-                dndType="externalNode"
-                theme={FullNodeTheme}
-                scaffoldBlockPxWidth={20}
-                treeData={this.state.treeData}
-                canNodeHaveChildren={() => false}
-                onChange={treeData => this.setState({ treeData })} />
-            </div>
-          </DndProvider>
-        </div>
+    <div style={{ display: "flex", flexGrow: 1 }}>
+      <div className="sidebar" style={{ width: 300 }}>
+        <DndProvider backend={HTML5Backend}>
+          <div className="draggables">
+            <ExternalNode node={{ title: 'Up', color: 'green', icon: ArrowUpwardIcon }} />
+            <ExternalNode node={{ title: 'Down', color: 'orange', icon: ArrowDownwardIcon }} />
+            <ExternalNode node={{ title: 'Left', color: 'purple', icon: ArrowBackIcon }} />
+            <ExternalNode node={{ title: 'Right', color: 'blue', icon: ArrowForwardIcon }} />
+            <TrashNode/>
+          </div>
+          <div style={{ height: '100%' }}>
+            <SortableTree
+              dndType="externalNode"
+              theme={FullNodeTheme}
+              scaffoldBlockPxWidth={20}
+              treeData={this.state.treeData}
+              canNodeHaveChildren={() => false}
+              onChange={treeData => this.setState({ treeData })} />
+          </div>
+        </DndProvider>
+      </div>
 
-        <div className="content" style={{ flexGrow: 1 }}>
-          <div>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Button
-                variant="contained"
-                color="primary"
-                endIcon={<PlayArrowIcon />}
-                onClick={() => this.makePacoMove(this.state.treeData)}>
-                Make Paco GO!
-              </Button>
+      <div className="content" style={{ flexGrow: 1 }}>
+        <div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button
+              variant="contained"
+              color="primary"
+              endIcon={<PlayArrowIcon />}
+              onClick={() => this.makePacoMove(this.state.treeData)}>
+              Make Paco GO!
+            </Button>
 
-              <Button
-                variant="contained"
-                color="primary"
-                endIcon={<AutorenewIcon />}
-                onClick={this.handleResetGame}>
-                Reset Paco
-              </Button>
-            </div>
+            <Button
+              variant="contained"
+              color="primary"
+              endIcon={<AutorenewIcon />}
+              onClick={this.handleResetGame}>
+              Reset Paco
+            </Button>
+          </div>
 
-            <div className="grid" style={{ position: 'relative' }}>
-              <canvas id="confetti" />
+          <div className="grid" style={{ position: 'relative' }}>
+            <canvas id="confetti" />
 
-              <img src={Pizza} style={{ position: 'absolute', width: 70, top: 320, left: 220 }} />
-              <img src={Home} style={{ position: 'absolute', width: 70, top: 15, left: 220 }} />
-              <img src={Paco}
-                   className={this.state.pacoMoving ? "paco paco-move" : "paco"}
-                   style={{ position: 'absolute', width: 70, left: this.state.pacoX, top: this.state.pacoY }} />
+            <img src={Pizza} style={{ position: 'absolute', width: 70, top: 320, left: 220 }} />
+            <img src={Home} style={{ position: 'absolute', width: 70, top: 15, left: 220 }} />
+            <img src={Paco}
+                  className={this.state.pacoMoving ? "paco paco-move" : "paco"}
+                  style={{ position: 'absolute', width: 70, left: this.state.pacoX, top: this.state.pacoY }} />
 
-              {range(4).map(i =>
-                <div className="row" key={i}>
-                  {range(4).map(j => <div className="column" key={j}></div>)}
-                </div>)}
-            </div>
+            {range(4).map(i =>
+              <div className="row" key={i}>
+                {range(4).map(j => <div className="column" key={j}></div>)}
+              </div>)}
           </div>
         </div>
       </div>
