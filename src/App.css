@@ -74,3 +74,13 @@
 .MuiButton-containedPrimary{
   background-color: #F78764 !important;
 }
+.MuiAppBar-colorPrimary{
+  background-color: #fff !important;
+
+}  
+.logo{
+  width: 180px;
+}
+.MuiPaper-elevation4{
+  box-shadow: none !important;
+}
