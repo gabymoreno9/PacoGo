@@ -85,10 +85,10 @@ class Game extends React.Component {
       <div className="sidebar" style={{ width: 300 }}>
         <DndProvider backend={HTML5Backend}>
           <div className="draggables">
-            <ExternalNode node={{ title: 'Up', color: 'green', icon: ArrowUpwardIcon }} />
-            <ExternalNode node={{ title: 'Down', color: 'orange', icon: ArrowDownwardIcon }} />
-            <ExternalNode node={{ title: 'Left', color: 'purple', icon: ArrowBackIcon }} />
-            <ExternalNode node={{ title: 'Right', color: 'blue', icon: ArrowForwardIcon }} />
+            <ExternalNode node={{ title: 'Up', color: '#59A725', icon: ArrowUpwardIcon }} />
+            <ExternalNode node={{ title: 'Down', color: '#8D619F', icon: ArrowDownwardIcon }} />
+            <ExternalNode node={{ title: 'Left', color: '#DA5C12', icon: ArrowBackIcon }} />
+            <ExternalNode node={{ title: 'Right', color: '#0683C2', icon: ArrowForwardIcon }} />
             <TrashNode/>
           </div>
           <div style={{ height: '100%' }}>
